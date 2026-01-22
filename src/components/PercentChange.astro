@@ -1,0 +1,134 @@
+---
+/* No framework needed */
+---
+
+<!-- Q2: What is the percentage increase/decrease? -->
+<div class="d-grid row-gap-3">
+  <h2 class="h6 mb-0">2) Percentage increase / decrease</h2>
+
+  <form id="change_form" class="d-flex flex-column row-gap-3" novalidate>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+    <label for="change_form_x_value" class="text-nowrap"
+      >What is the percentage change from</label
+    >
+    <input
+      id="change_form_x_value"
+      type="number"
+      name="change_form_x_value"
+      step="any"
+      placeholder="old value"
+      required
+      class="form-control"
+      aria-label="Old value"
+    />
+    <label for="change_form_y_value" class="text-nowrap">to</label>
+    <input
+      id="change_form_y_value"
+      type="number"
+      name="change_form_y_value"
+      step="any"
+      placeholder="new value"
+      required
+      class="form-control"
+      aria-label="New value"
+    />
+    <span>?</span>
+    </div>
+  <div class="d-flex gap-2">
+    <button type="submit" class="btn btn-primary">Calculate</button>
+    <button type="reset" class="btn btn-outline-secondary">Reset</button>
+  </div>
+</form>
+
+<div class="alert alert-info mb-0" role="status" aria-live="polite">
+  <span id="changeResult" class="fw-semibold"
+    >Enter values and click Calculate.</span
+  >
+</div>
+
+<p class="text-muted small mt-2 mb-0">
+  Formula: <span class="font-monospace">(new − old) / old × 100</span>
+</p>
+
+<script>
+  const format = (n, maxFractionDigits = 10) => {
+    if (!Number.isFinite(n)) return "";
+    return n.toLocaleString(undefined, {
+      maximumFractionDigits: maxFractionDigits,
+    });
+  };
+
+  // 2) Percentage increase/decrease
+  const changeForm = document.querySelector("#change_form");
+  const changeResult = document.querySelector("#changeResult");
+
+  if (changeForm && changeResult) {
+    changeForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(changeForm);
+      const from = Number(data.get("change_form_y_value"));
+      const to = Number(data.get("change_form_y_value"));
+
+      if (!Number.isFinite(from) || !Number.isFinite(to)) {
+        changeResult.textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      if (from === 0) {
+        changeResult.textContent =
+          "Percentage change is undefined when the old value is 0.";
+        return;
+      }
+
+      const pctChange = ((to - from) / from) * 100;
+      const direction =
+        pctChange > 0 ? "increase" : pctChange < 0 ? "decrease" : "change";
+
+      changeResult.textContent = `From ${format(from)} to ${format(to)} = ${format(
+        Math.abs(pctChange),
+        6,
+      )}% ${direction}`;
+    });
+
+    changeForm.addEventListener("reset", () => {
+      requestAnimationFrame(() => {
+        changeResult.textContent = "Enter values and click Calculate.";
+      });
+    });
+  }
+
+  // 3) What percent is X from Y
+  const percentIsForm = document.querySelector("#percentIsForm");
+  const percentIsResult = document.querySelector("#percentIsResult");
+
+  if (percentIsForm && percentIsResult) {
+    percentIsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(percentIsForm);
+      const part = Number(data.get("part")); // X
+      const whole = Number(data.get("whole")); // Y
+
+      if (!Number.isFinite(part) || !Number.isFinite(whole)) {
+        percentIsResult.textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      if (whole === 0) {
+        percentIsResult.textContent =
+          "This percentage is undefined when the second number is 0.";
+        return;
+      }
+
+      const pct = (part / whole) * 100;
+      percentIsResult.textContent = `${format(part)} is ${format(pct, 6)}% of ${format(whole)}`;
+    });
+
+    percentIsForm.addEventListener("reset", () => {
+      requestAnimationFrame(() => {
+        percentIsResult.textContent = "Enter values and click Calculate.";
+      });
+    });
+  }
+</script>

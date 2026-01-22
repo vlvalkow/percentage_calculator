@@ -1,0 +1,93 @@
+---
+/* No framework needed */
+---
+
+<!-- Q3: What percent is ___ from ___ ? -->
+<div class="d-grid row-gap-3">
+  <h2 class="h6 mb-0">3) Percent difference between two numbers</h2>
+
+  <form id="percentIsForm" class="d-flex flex-column row-gap-3" novalidate>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <label for="x_value" class="text-nowrap">What percent is</label>
+      <input
+        id="x_value"
+        type="number"
+        name="part"
+        step="any"
+        placeholder="X"
+        required
+        class="form-control"
+        aria-label="X value"
+      />
+      <label for="y_value" class="text-nowrap">from</label>
+      <input
+        id="y_value"
+        type="number"
+        name="whole"
+        step="any"
+        placeholder="Y"
+        required
+        class="form-control"
+        aria-label="Y value"
+      />
+      <span>?</span>
+    </div>
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary">Calculate</button>
+      <button type="reset" class="btn btn-outline-secondary">Reset</button>
+    </div>
+  </form>
+
+  <div class="alert alert-info mb-0" role="status" aria-live="polite">
+    <span id="percentIsResult" class="fw-semibold"
+      >Enter values and click Calculate.</span
+    >
+  </div>
+
+  <p class="text-muted small mt-2 mb-0">
+    Formula: <span class="font-monospace">X / Y × 100</span>
+  </p>
+</div>
+
+<script>
+  const format = (n, maxFractionDigits = 10) => {
+    if (!Number.isFinite(n)) return "";
+    return n.toLocaleString(undefined, {
+      maximumFractionDigits: maxFractionDigits,
+    });
+  };
+
+  // 3) What percent is X from Y
+  const percentIsForm = document.querySelector("#percentIsForm");
+  const percentIsResult = document.querySelector("#percentIsResult");
+
+  if (percentIsForm && percentIsResult) {
+    percentIsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(percentIsForm);
+      const part = Number(data.get("part")); // X
+      const whole = Number(data.get("whole")); // Y
+
+      if (!Number.isFinite(part) || !Number.isFinite(whole)) {
+        percentIsResult.textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      if (whole === 0) {
+        percentIsResult.textContent =
+          "This percentage is undefined when the second number is 0.";
+        return;
+      }
+
+      const pct = (part / whole) * 100;
+      percentIsResult.textContent = `${format(part)} is ${format(pct, 6)}% from ${format(whole)}`;
+    });
+
+    percentIsForm.addEventListener("reset", () => {
+      requestAnimationFrame(() => {
+        percentIsResult.textContent = "Enter values and click Calculate.";
+      });
+    });
+  }
+</script>
