@@ -4,25 +4,12 @@ import PercentDifference from "./PercentDifference.astro";
 import PercentOfNumber from "./PercentOfNumber.astro";
 ---
 
-<div id="container">
-  <main>
-    <section class="py-5">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8">
-            <div class="card shadow-sm">
-              <div class="card-header p-3"><h1 class="h4 m-0 text-center">Percentage calculator</h1></div>
-              <div class="card-body p-5">
-                <PercentOfNumber />
-                <hr class="my-5" />
-                <PercentChange />
-                <hr class="my-5" />
-                <PercentDifference />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="card shadow-sm">
+  <div class="card-body p-5">
+    <PercentOfNumber />
+    <hr class="my-5" />
+    <PercentChange />
+    <hr class="my-5" />
+    <PercentDifference />
+  </div>
 </div>
