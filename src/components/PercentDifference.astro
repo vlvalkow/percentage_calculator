@@ -8,22 +8,22 @@
 
   <form id="percentIsForm" class="d-flex flex-column row-gap-3" novalidate>
     <div class="d-flex justify-content-center align-items-center gap-2">
-      <label for="x_value" class="text-nowrap">What percent is</label>
+      <label for="percent_is_form_x_value" class="text-nowrap">What percent is</label>
       <input
-        id="x_value"
+        id="percent_is_form_x_value"
         type="number"
-        name="part"
+        name="percent_is_form_x_value"
         step="any"
         placeholder="X"
         required
         class="form-control"
         aria-label="X value"
       />
-      <label for="y_value" class="text-nowrap">from</label>
+      <label for="percent_is_form_y_value" class="text-nowrap">from</label>
       <input
-        id="y_value"
+        id="percent_is_form_y_value"
         type="number"
-        name="whole"
+        name="percent_is_form_y_value"
         step="any"
         placeholder="Y"
         required
@@ -66,8 +66,8 @@
       e.preventDefault();
 
       const data = new FormData(percentIsForm);
-      const part = Number(data.get("part")); // X
-      const whole = Number(data.get("whole")); // Y
+      const part = Number(data.get("percent_is_form_x_value")); // X
+      const whole = Number(data.get("percent_is_form_y_value")); // Y
 
       if (!Number.isFinite(part) || !Number.isFinite(whole)) {
         percentIsResult.textContent = "Please enter valid numbers.";

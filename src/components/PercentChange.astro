@@ -67,7 +67,7 @@
       e.preventDefault();
 
       const data = new FormData(changeForm);
-      const from = Number(data.get("change_form_y_value"));
+      const from = Number(data.get("change_form_x_value"));
       const to = Number(data.get("change_form_y_value"));
 
       if (!Number.isFinite(from) || !Number.isFinite(to)) {
