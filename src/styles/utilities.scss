@@ -443,12 +443,12 @@ $utilities: map-merge(
       class: p,
       values: $spacers
     ),
-    // "padding-x": (
-    //   responsive: true,
-    //   property: padding-right padding-left,
-    //   class: px,
-    //   values: $spacers
-    // ),
+    "padding-x": (
+      responsive: true,
+      property: padding-right padding-left,
+      class: px,
+      values: $spacers
+    ),
     "padding-y": (
     //   responsive: true,
       property: padding-top padding-bottom,

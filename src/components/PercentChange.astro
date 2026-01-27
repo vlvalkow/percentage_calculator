@@ -3,52 +3,70 @@
 ---
 
 <!-- Q2: What is the percentage increase/decrease? -->
-<div class="d-grid row-gap-3">
-  <h2 class="h6 mb-0">2) Percentage increase / decrease</h2>
+<div class="card shadow-sm">
+  <div class="card-body p-4 py-5">
+    <div class="d-flex flex-column row-gap-3">
+      <h2>What is the percentage change from</h2>
+      <form id="change_form" class="fs-5" novalidate>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex flex-wrap gap-2">
+            <div
+              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+            >
+              <!-- <label for="change_form_x_value" class="text-nowrap"
+                >What is the percentage change from</label
+              > -->
+              
+            </div>
+            <div
+              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+            >
+            <input
+                id="change_form_x_value"
+                type="number"
+                inputmode="decimal"
+                name="change_form_x_value"
+                step="any"
+                placeholder="old value"
+                required
+                class="form-control form-control-lg"
+                aria-label="Old value"
+              />
+              <label for="change_form_y_value" class="text-nowrap">to</label>
+              <input
+                id="change_form_y_value"
+                type="number"
+                inputmode="decimal"
+                name="change_form_y_value"
+                step="any"
+                placeholder="new value"
+                required
+                class="form-control form-control-lg"
+                aria-label="New value"
+              />
+              <span style="min-width: 1rem; text-align: right;">?</span>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
+            <button type="reset" class="btn btn-outline-secondary btn-lg">Reset</button
+            >
+          </div>
+        </div>
+      </form>
 
-  <form id="change_form" class="d-flex flex-column row-gap-3" novalidate>
-    <div class="d-flex justify-content-center align-items-center gap-2">
-    <label for="change_form_x_value" class="text-nowrap"
-      >What is the percentage change from</label
-    >
-    <input
-      id="change_form_x_value"
-      type="number"
-      name="change_form_x_value"
-      step="any"
-      placeholder="old value"
-      required
-      class="form-control"
-      aria-label="Old value"
-    />
-    <label for="change_form_y_value" class="text-nowrap">to</label>
-    <input
-      id="change_form_y_value"
-      type="number"
-      name="change_form_y_value"
-      step="any"
-      placeholder="new value"
-      required
-      class="form-control"
-      aria-label="New value"
-    />
-    <span>?</span>
+      <div class="alert alert-info mb-0 fs-5" role="status" aria-live="polite">
+        <span id="changeResult" class="fw-semibold"
+          >Enter values and click Calculate.</span
+        >
+      </div>
+
+      <p class="text-muted mt-2 mb-0">
+        Formula: <span class="font-monospace">(new − old) / old × 100</span>
+      </p>
     </div>
-  <div class="d-flex gap-2">
-    <button type="submit" class="btn btn-primary">Calculate</button>
-    <button type="reset" class="btn btn-outline-secondary">Reset</button>
   </div>
-</form>
-
-<div class="alert alert-info mb-0" role="status" aria-live="polite">
-  <span id="changeResult" class="fw-semibold"
-    >Enter values and click Calculate.</span
-  >
 </div>
-
-<p class="text-muted small mt-2 mb-0">
-  Formula: <span class="font-monospace">(new − old) / old × 100</span>
-</p>
 
 <script>
   const format = (n, maxFractionDigits = 10) => {

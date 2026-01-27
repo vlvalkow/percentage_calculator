@@ -28,6 +28,8 @@ $grid-breakpoints: (
 //   xxl: 1400px
 );
 
+// $font-size-lg: 1.15rem;
+
 // 5. Include remainder of required parts
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";

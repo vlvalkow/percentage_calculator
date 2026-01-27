@@ -3,65 +3,80 @@
 ---
 
 <!-- Q1: What is __ % of __ ? -->
-<div class="d-grid row-gap-3">
-  <h2 class="fs-5 mb-0">1) Percent of a number</h2>
+<div class="card shadow-sm">
+  <div class="card-body p-4 py-5">
+    <div class="d-flex flex-column row-gap-3">
+      <h2>What is the percent part of</h2>
+      <form id="percent_of_form" class="fs-5" novalidate>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex flex-wrap gap-2">
+            <div
+              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+            >
+              <label
+                for="percent_of_form_x_value"
+                class="col-2 col-lg-auto text-nowrap"
+                style="min-width: 4rem">What is</label
+              >
+              <input
+                id="percent_of_form_x_value"
+                type="number"
+                name="percent_of_form_x_value"
+                inputmode="decimal"
+                step="any"
+                min="0"
+                placeholder="%"
+                required
+                class="form-control form-control-lg"
+                aria-label="Percent"
+              />
+              <span style="min-width: 1rem">%</span>
+            </div>
+            <div
+              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+            >
+              <label
+                for="percent_of_form_y_value"
+                class="col-2 col-lg-auto text-nowrap"
+                style="min-width: 4rem">from</label
+              >
+              <input
+                id="percent_of_form_y_value"
+                type="number"
+                name="percent_of_form_y_value"
+                inputmode="decimal"
+                step="any"
+                placeholder="number"
+                required
+                class="form-control form-control-lg"
+                aria-label="Number"
+              />
+              <span style="min-width: 1rem; text-align: right;">?</span>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              >Calculate</button
+            >
+            <button type="reset" class="btn btn-outline-secondary btn-lg"
+              >Reset</button
+            >
+          </div>
+        </div>
+      </form>
 
-  <form id="percent_of_form" novalidate>
-    <div class="d-flex gap-3 flex-column fs-5">
-      <div class="d-flex gap-2 flex-wrap">
-        <div class="d-flex align-items-center gap-4 gap-lg-3 flex-grow-1 flex-md-grow-0">
-          <label
-            for="percent_of_form_x_value"
-            class="text-nowrap col-2 col-lg-aut">What is</label
-          >
-          <input
-            id="percent_of_form_x_value"
-            type="number"
-            name="percent_of_form_x_value"
-            step="any"
-            min="0"
-            placeholder="%"
-            required
-            class="form-control form-control-lg"
-            aria-label="Percent"
-          />
-          <span>%</span>
-        </div>
-        <div class="d-flex align-items-center gap-4 gap-lg-3 flex-grow-1 flex-md-grow-0">
-          <label
-            for="percent_of_form_y_value"
-            class="text-nowrap col-2 col-lg-auto">from the</label
-          >
-          <input
-            id="percent_of_form_y_value"
-            type="number"
-            name="percent_of_form_y_value"
-            step="any"
-            placeholder="number"
-            required
-            class="form-control form-control-lg"
-            aria-label="Number"
-          />
-          <span>?</span>
-        </div>
+      <div class="alert alert-info mb-0 fs-5" role="status" aria-live="polite">
+        <span id="percentOfResult" class="fw-semibold"
+          >Enter values and click Calculate.</span
+        >
       </div>
-      <div class="d-flex gap-2">
-        <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
-        <button type="reset" class="btn btn-outline-secondary btn-lg">Reset</button>
-      </div>
+
+      <p class="text-muted mb-0">
+        Formula:
+        <span class="font-monospace">(percent ÷ 100) × number</span>
+      </p>
     </div>
-  </form>
-
-  <div class="alert alert-info mb-0 fs-5" role="status" aria-live="polite">
-    <span id="percentOfResult" class="fw-semibold"
-      >Enter values and click Calculate.</span
-    >
   </div>
-
-  <p class="text-muted mb-0">
-    Formula:
-    <span class="font-monospace">(percent ÷ 100) × number</span>
-  </p>
 </div>
 
 <script>

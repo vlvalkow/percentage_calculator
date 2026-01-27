@@ -3,50 +3,75 @@
 ---
 
 <!-- Q3: What percent is ___ from ___ ? -->
-<div class="d-grid row-gap-3">
-  <h2 class="h6 mb-0">3) Percent difference between two numbers</h2>
+<div class="card shadow-sm">
+  <div class="card-body p-4 py-5">
+    <div class="d-flex flex-column row-gap-3">
+      <h2>What is the percentage difference of</h2>
+      <form id="percentIsForm" class="fs-5" novalidate>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex flex-wrap gap-2">
+            <div
+              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+            >
+              <label
+                for="percent_is_form_x_value"
+                class="text-nowrap"
+                style="min-width: 5rem">What %</label
+              >
+              <input
+                id="percent_is_form_x_value"
+                type="number"
+                inputmode="decimal"
+                name="percent_is_form_x_value"
+                step="any"
+                placeholder="X"
+                required
+                class="form-control form-control-lg"
+                aria-label="X value"
+              />
+              <span style="min-width: 1rem; text-align: right;">is</span>
+            </div>
+            <div
+              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+            >
+              <label
+                for="percent_is_form_y_value"
+                class="text-nowrap"
+                style="min-width: 5rem">from</label
+              >
+              <input
+                id="percent_is_form_y_value"
+                type="number"
+                inputmode="decimal"
+                name="percent_is_form_y_value"
+                step="any"
+                placeholder="Y"
+                required
+                class="form-control form-control-lg"
+                aria-label="Y value"
+              />
+              <span style="min-width: 1rem; text-align: right;">?</span>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
+            <button type="reset" class="btn btn-outline-secondary btn-lg">Reset</button
+            >
+          </div>
+        </div>
+      </form>
 
-  <form id="percentIsForm" class="d-flex flex-column row-gap-3" novalidate>
-    <div class="d-flex justify-content-center align-items-center gap-2">
-      <label for="percent_is_form_x_value" class="text-nowrap">What percent is</label>
-      <input
-        id="percent_is_form_x_value"
-        type="number"
-        name="percent_is_form_x_value"
-        step="any"
-        placeholder="X"
-        required
-        class="form-control"
-        aria-label="X value"
-      />
-      <label for="percent_is_form_y_value" class="text-nowrap">from</label>
-      <input
-        id="percent_is_form_y_value"
-        type="number"
-        name="percent_is_form_y_value"
-        step="any"
-        placeholder="Y"
-        required
-        class="form-control"
-        aria-label="Y value"
-      />
-      <span>?</span>
-    </div>
-    <div class="d-flex gap-2">
-      <button type="submit" class="btn btn-primary">Calculate</button>
-      <button type="reset" class="btn btn-outline-secondary">Reset</button>
-    </div>
-  </form>
+      <div class="alert alert-info mb-0 fs-5" role="status" aria-live="polite">
+        <span id="percentIsResult" class="fw-semibold"
+          >Enter values and click Calculate.</span
+        >
+      </div>
 
-  <div class="alert alert-info mb-0" role="status" aria-live="polite">
-    <span id="percentIsResult" class="fw-semibold"
-      >Enter values and click Calculate.</span
-    >
+      <p class="text-muted small mt-2 mb-0">
+        Formula: <span class="font-monospace">X / Y × 100</span>
+      </p>
+    </div>
   </div>
-
-  <p class="text-muted small mt-2 mb-0">
-    Formula: <span class="font-monospace">X / Y × 100</span>
-  </p>
 </div>
 
 <script>
