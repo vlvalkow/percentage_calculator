@@ -6,13 +6,13 @@
 <div class="card shadow-sm">
   <div class="card-body p-4 py-5">
     <div class="d-flex flex-column row-gap-3">
-      <h2>What is the percentage change from</h2>
+      <h2>What is the % change from</h2>
       <form id="change_form" class="fs-5" novalidate>
-        <div class="d-flex flex-column gap-3">
-          <div class="d-flex flex-wrap gap-2">
+        <div class="d-flex flex-column row-gap-3">
+          <div class="d-flex flex-wrap row-gap-2">
      
             <div
-              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
+              class="d-flex align-items-center flex-grow-1"
             >
             <input
                 id="change_form_x_value"
@@ -20,26 +20,26 @@
                 inputmode="decimal"
                 name="change_form_x_value"
                 step="any"
-                placeholder="X"
+                placeholder="old"
                 required
                 class="form-control form-control-lg"
                 aria-label="Old value"
               />
-              <label for="change_form_y_value" class="text-nowrap">to</label>
+              <span class="fs-5 text-end text-sm-center min-w-2 min-w-lg-auto mx-0 mx-md-3">to</span>
             </div>
-            <div class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3">
+            <div class="d-flex align-items-center flex-grow-1">
               <input
                 id="change_form_y_value"
                 type="number"
                 inputmode="decimal"
                 name="change_form_y_value"
                 step="any"
-                placeholder="Y"
+                placeholder="new"
                 required
                 class="form-control form-control-lg"
                 aria-label="New value"
               />
-              <span style="min-width: 1rem; text-align: right;">?</span>
+              <span class="fs-5 text-end min-w-2 min-w-lg-auto ms-0 ms-lg-3">?</span>
             </div>
           </div>
           <div class="d-flex gap-2">
