@@ -10,7 +10,29 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Percentage calculator</title>
+    <title>
+      The Percentage Calculator - your modern app for calculating of percentages
+      easily, online, completely free
+    </title>
+    <meta
+      name="description"
+      content="Free percentage calculator that allows to calculate percentage of a number, percentage increase or decrease, percentage part and difference, instantly. Simple, modern, fast, and accurate."
+    />
+    <link rel="canonical" href="https://thepercentagecalculator.app" />
+    <meta
+      property="og:title"
+      content=">The Percentage Calculator - your modern app for calculating of percentages easily, online, completely free"
+    />
+    <meta
+      property="og:description"
+      content="Free percentage calculator that allows to calculate percentage of a number, percentage increase or decrease, percentage part and difference, instantly. Simple, modern, fast, and accurate."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thepercentagecalculator.app" />
+    <meta
+      property="og:image"
+      content="https://thepercentagecalculator.app/favicon.svg"
+    />
   </head>
   <body>
     <header>
@@ -31,7 +53,7 @@ const year = new Date().getFullYear();
                 ></path>
               </svg>
             </div>
-            <span class="h4 mb-0">Percentage calculator</span>
+            <h1 class="h4 mb-0">The Percentage Calculator</h1>
           </a>
           <div class="dropdown">
             <button
@@ -145,11 +167,13 @@ const year = new Date().getFullYear();
         <div class="row">
           <div class="col d-flex align-items-center justify-content-between">
             <div>
-              © {year} Percentage calculator
+              © {year} The Percentage Calculator
             </div>
             <ul class="nav">
               <li class="nav-item">
-                <a href="#" class="nav-link px-2 text-body-secondary">Cookie settings</a>
+                <a href="#" class="nav-link px-2 text-body-secondary"
+                  >Cookie settings</a
+                >
               </li>
             </ul>
           </div>
@@ -159,6 +183,17 @@ const year = new Date().getFullYear();
     <script src="../scripts/color-mode.js"></script>
     <script>
       import "bootstrap/js/dist/dropdown";
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "The Percentage Calculator",
+        "applicationCategory": "Calculator",
+        "operatingSystem": "All",
+        "url": "https://thepercentagecalculator.app",
+        "description": "Free percentage calculator that allows to calculate percentage of a number, percentage increase or decrease, percentage part and difference, instantly. Simple, modern, fast, and accurate."
+      }
     </script>
   </body>
 </html>
