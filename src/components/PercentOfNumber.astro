@@ -6,18 +6,13 @@
 <div class="card shadow-sm">
   <div class="card-body p-4 py-5">
     <div class="d-flex flex-column row-gap-3">
-      <h2>What is the percent part of</h2>
+      <h2>What is the result of</h2>
       <form id="percent_of_form" class="fs-5" novalidate>
         <div class="d-flex flex-column gap-3">
           <div class="d-flex flex-wrap gap-2">
             <div
               class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
             >
-              <label
-                for="percent_of_form_x_value"
-                class="col-2 col-lg-auto text-nowrap"
-                style="min-width: 4rem">What is</label
-              >
               <input
                 id="percent_of_form_x_value"
                 type="number"
@@ -25,33 +20,29 @@
                 inputmode="decimal"
                 step="any"
                 min="0"
-                placeholder="%"
+                placeholder="X"
                 required
                 class="form-control form-control-lg"
                 aria-label="Percent"
               />
-              <span style="min-width: 1rem">%</span>
+              <span style="min-width: 2.5rem; text-align: right">% of</span>
             </div>
             <div
               class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
             >
-              <label
-                for="percent_of_form_y_value"
-                class="col-2 col-lg-auto text-nowrap"
-                style="min-width: 4rem">from</label
-              >
+       
               <input
                 id="percent_of_form_y_value"
                 type="number"
                 name="percent_of_form_y_value"
                 inputmode="decimal"
                 step="any"
-                placeholder="number"
+                placeholder="Y"
                 required
                 class="form-control form-control-lg"
                 aria-label="Number"
               />
-              <span style="min-width: 1rem; text-align: right;">?</span>
+              <span style="min-width: 2.5rem; text-align: right;">?</span>
             </div>
           </div>
           <div class="d-flex gap-2">

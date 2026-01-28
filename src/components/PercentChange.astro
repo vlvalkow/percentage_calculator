@@ -10,14 +10,7 @@
       <form id="change_form" class="fs-5" novalidate>
         <div class="d-flex flex-column gap-3">
           <div class="d-flex flex-wrap gap-2">
-            <div
-              class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
-            >
-              <!-- <label for="change_form_x_value" class="text-nowrap"
-                >What is the percentage change from</label
-              > -->
-              
-            </div>
+     
             <div
               class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
             >
@@ -27,19 +20,21 @@
                 inputmode="decimal"
                 name="change_form_x_value"
                 step="any"
-                placeholder="old value"
+                placeholder="X"
                 required
                 class="form-control form-control-lg"
                 aria-label="Old value"
               />
               <label for="change_form_y_value" class="text-nowrap">to</label>
+            </div>
+            <div class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3">
               <input
                 id="change_form_y_value"
                 type="number"
                 inputmode="decimal"
                 name="change_form_y_value"
                 step="any"
-                placeholder="new value"
+                placeholder="Y"
                 required
                 class="form-control form-control-lg"
                 aria-label="New value"
@@ -116,7 +111,6 @@
     });
   }
 
-  // 3) What percent is X from Y
   const percentIsForm = document.querySelector("#percentIsForm");
   const percentIsResult = document.querySelector("#percentIsResult");
 

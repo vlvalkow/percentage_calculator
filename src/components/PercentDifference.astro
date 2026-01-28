@@ -6,18 +6,13 @@
 <div class="card shadow-sm">
   <div class="card-body p-4 py-5">
     <div class="d-flex flex-column row-gap-3">
-      <h2>What is the percentage difference of</h2>
+      <h2>What percentage is</h2>
       <form id="percentIsForm" class="fs-5" novalidate>
         <div class="d-flex flex-column gap-3">
           <div class="d-flex flex-wrap gap-2">
             <div
               class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
             >
-              <label
-                for="percent_is_form_x_value"
-                class="text-nowrap"
-                style="min-width: 5rem">What %</label
-              >
               <input
                 id="percent_is_form_x_value"
                 type="number"
@@ -29,16 +24,11 @@
                 class="form-control form-control-lg"
                 aria-label="X value"
               />
-              <span style="min-width: 1rem; text-align: right;">is</span>
+              <span style="min-width: 1.5rem; text-align: right;">of</span>
             </div>
             <div
               class="d-flex align-items-center flex-grow-1 flex-md-grow-0 gap-4 gap-lg-3"
             >
-              <label
-                for="percent_is_form_y_value"
-                class="text-nowrap"
-                style="min-width: 5rem">from</label
-              >
               <input
                 id="percent_is_form_y_value"
                 type="number"
@@ -50,7 +40,7 @@
                 class="form-control form-control-lg"
                 aria-label="Y value"
               />
-              <span style="min-width: 1rem; text-align: right;">?</span>
+              <span style="min-width: 1.5rem; text-align: right;">?</span>
             </div>
           </div>
           <div class="d-flex gap-2">
@@ -106,7 +96,7 @@
       }
 
       const pct = (part / whole) * 100;
-      percentIsResult.textContent = `${format(part)} is ${format(pct, 6)}% from ${format(whole)}`;
+      percentIsResult.textContent = `${format(part)} is ${format(pct, 6)}% of ${format(whole)}`;
     });
 
     percentIsForm.addEventListener("reset", () => {
