@@ -98,7 +98,7 @@
       const direction =
         pctChange > 0 ? "increase" : pctChange < 0 ? "decrease" : "change";
 
-      changeResult.textContent = `From ${format(from)} to ${format(to)} = ${format(
+      changeResult.textContent = `${format(from)} to ${format(to)} is ${format(
         Math.abs(pctChange),
         6,
       )}% ${direction}`;

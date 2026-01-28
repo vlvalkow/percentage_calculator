@@ -96,7 +96,7 @@
       }
 
       const pct = (part / whole) * 100;
-      percentIsResult.textContent = `${format(part)} is ${format(pct, 6)}% of ${format(whole)}`;
+      percentIsResult.textContent = `${format(part)} of ${format(whole)} is ${format(pct, 6)}%`;
     });
 
     percentIsForm.addEventListener("reset", () => {
