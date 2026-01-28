@@ -16,10 +16,9 @@
             >
             <input
                 id="change_form_x_value"
-                type="number"
+                type="text"
                 inputmode="decimal"
                 name="change_form_x_value"
-                step="any"
                 placeholder="old"
                 required
                 class="form-control form-control-lg"
@@ -30,10 +29,9 @@
             <div class="d-flex align-items-center flex-grow-1">
               <input
                 id="change_form_y_value"
-                type="number"
+                type="text"
                 inputmode="decimal"
                 name="change_form_y_value"
-                step="any"
                 placeholder="new"
                 required
                 class="form-control form-control-lg"
@@ -64,6 +62,8 @@
 </div>
 
 <script>
+  const toDotDecimal = (v) => String(v).replace(/,/g, ".");
+
   const format = (n, maxFractionDigits = 10) => {
     if (!Number.isFinite(n)) return "";
     return n.toLocaleString(undefined, {
@@ -80,8 +80,8 @@
       e.preventDefault();
 
       const data = new FormData(changeForm);
-      const from = Number(data.get("change_form_x_value"));
-      const to = Number(data.get("change_form_y_value"));
+      const from = Number(toDotDecimal(data.get("change_form_x_value")));
+      const to = Number(toDotDecimal(data.get("change_form_y_value")));
 
       if (!Number.isFinite(from) || !Number.isFinite(to)) {
         changeResult.textContent = "Please enter valid numbers.";

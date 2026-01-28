@@ -16,10 +16,9 @@
             <div class="input-group">
               <input
                 id="percent_of_form_x_value"
-                type="number"
+                type="text"
                 name="percent_of_form_x_value"
                 inputmode="decimal"
-                step="any"
                 min="0"
                 placeholder="X"
                 required
@@ -35,10 +34,9 @@
             >
               <input
                 id="percent_of_form_y_value"
-                type="number"
+                type="text"
                 name="percent_of_form_y_value"
                 inputmode="decimal"
-                step="any"
                 placeholder="Y"
                 required
                 class="form-control form-control-lg"
@@ -73,6 +71,8 @@
 </div>
 
 <script>
+  const toDotDecimal = (v) => String(v).replace(/,/g, ".");
+
   const format = (n, maxFractionDigits = 10) => {
     if (!Number.isFinite(n)) return "";
     return n.toLocaleString(undefined, {
@@ -89,8 +89,8 @@
       e.preventDefault();
 
       const data = new FormData(percentOfForm);
-      const pct = Number(data.get("percent_of_form_x_value"));
-      const num = Number(data.get("percent_of_form_y_value"));
+      const pct = Number(toDotDecimal(data.get("percent_of_form_x_value")));
+      const num = Number(toDotDecimal(data.get("percent_of_form_y_value")));
 
       if (!Number.isFinite(pct) || !Number.isFinite(num)) {
         percentOfResult.textContent = "Please enter valid numbers.";
