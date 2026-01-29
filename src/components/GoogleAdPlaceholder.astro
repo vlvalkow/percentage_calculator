@@ -1,0 +1,26 @@
+---
+// Used in development instead of actual ads as Google does not support non public URLs.
+
+const { layout, showOnMobile } = Astro.props;
+
+const getHeightByPlaceholderLayout = (layout: string) => {
+  switch (layout) {
+    case "horizontal":
+      return 240;
+    case "vertical":
+      return 500;
+    default:
+      return 240;
+  }
+};
+---
+
+<div
+  class={"align-items-center justify-content-center w-100 bg-secondary text-white border rounded " +
+  (showOnMobile
+    ? "d-flex"
+    : "d-none d-lg-flex")}
+  style={`height: ${getHeightByPlaceholderLayout(layout)}px`}
+>
+  <span>Placeholder</span>
+</div>

@@ -1,5 +1,6 @@
 ---
 import "../styles/bootstrap.scss";
+import GoogleAd from "../components/GoogleAd.astro";
 const year = new Date().getFullYear();
 ---
 
@@ -33,6 +34,11 @@ const year = new Date().getFullYear();
       property="og:image"
       content="https://thepercentagecalculator.app/favicon.svg"
     />
+    <meta name="google-adsense-account" content="ca-pub-1410913885911026" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1410913885911026"
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -40,7 +46,11 @@ const year = new Date().getFullYear();
         <div class="container">
           <a class="navbar-brand align-items-center d-flex" href="#">
             <div class="bg-primary p-2 me-3 rounded-4 text-white">
-              <img src="/favicon.svg" class="min-w-2" alt="The calculator app logo">
+              <img
+                src="/favicon.svg"
+                class="min-w-2"
+                alt="The calculator app logo"
+              />
             </div>
             <h1 class="h4 mb-0">Percentage Calculator</h1>
           </a>
@@ -146,7 +156,9 @@ const year = new Date().getFullYear();
           </main>
         </div>
         <div class="col">
-          <aside></aside>
+          <aside>
+            <GoogleAd id="4868040957" placeholderLayout="vertical" showOnMobile={false}>
+          </aside>
         </div>
       </div>
     </div>

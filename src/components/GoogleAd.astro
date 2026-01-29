@@ -1,0 +1,31 @@
+---
+import GoogleAdPlaceholder from "./GoogleAdPlaceholder.astro";
+const { id, placeholderLayout, showOnMobile = true } = Astro.props;
+const appEnv = import.meta.env.APP_ENV;
+const enableAds = import.meta.env.ENABLE_ADS;
+
+const adsEnabled = () => enableAds === "true";
+const isProd = () => appEnv === "production";
+---
+
+{
+  !adsEnabled() ? null : isProd() ? (
+    <>
+      <ins
+        class={
+          "adsbygoogle " + (showOnMobile ? "d-block" : "d-none  d-lg-block")
+        }
+        data-ad-client="ca-pub-1410913885911026"
+        data-ad-slot={id}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </>
+  ) : (
+    <GoogleAdPlaceholder
+      layout={placeholderLayout}
+      showOnMobile={showOnMobile}
+    />
+  )
+}

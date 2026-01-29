@@ -65,7 +65,7 @@ $utilities: map-merge(
     // scss-docs-end utils-overflow
     // scss-docs-start utils-display
     "display": (
-    //   responsive: true,
+      responsive: true,
       print: true,
       property: display,
       class: d,
