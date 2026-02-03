@@ -1,15 +1,12 @@
 ---
-import GoogleAdPlaceholder from "./GoogleAdPlaceholder.astro";
+import AdPlaceholder from "./AdPlaceholder.astro";
 const { id, placeholderLayout, showOnMobile = true } = Astro.props;
-const appEnv = import.meta.env.APP_ENV;
-const enableAds = import.meta.env.ENABLE_ADS;
 
-const adsEnabled = () => enableAds === "true";
-const isProd = () => appEnv === "production";
+const adsMode = import.meta.env.ADS_MODE;
 ---
 
 {
-  !adsEnabled() ? null : isProd() ? (
+  adsMode === "google_ads" ? (
     <>
       <ins
         class={
@@ -22,10 +19,7 @@ const isProd = () => appEnv === "production";
       />
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </>
-  ) : (
-    <GoogleAdPlaceholder
-      layout={placeholderLayout}
-      showOnMobile={showOnMobile}
-    />
-  )
+  ) : adsMode === "placeholder_ads" ? (
+    <AdPlaceholder layout={placeholderLayout} showOnMobile={showOnMobile} />
+  ) : null
 }
