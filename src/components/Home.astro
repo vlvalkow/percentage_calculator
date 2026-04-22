@@ -7,9 +7,109 @@ import GoogleAd from "./GoogleAd.astro";
 
 <div class="d-flex flex-column row-gap-4">
   <PercentOfNumber />
-  <GoogleAd id="4963067816"/>
+  <GoogleAd id="4963067816" />
   <PercentChange />
-  <GoogleAd id="9832251110"/>
+  <GoogleAd id="9832251110" />
   <PercentDifference />
-  <GoogleAd id="5658435911"/>
+  <GoogleAd id="5658435911" />
+  <article class="d-flex flex-column row-gap-3 py-4">
+    <section>
+      <h2>Why another percentage calculator</h2>
+      <p>
+        Because existing calculators have outdated UIs and provide bad user
+        experience. Percentage calculations are very common and there should be
+        a tool that is easy to use. This is exactly where this app comes in - it
+        makes boring calculations a bit more fun!
+      </p>
+      <p>
+        The percentage calculator app was created as a modern alternative to
+        existing calculator apps. It provides a user friendly interface that
+        balances between math and natural language. In addition it is fully
+        optimised use on any device - mobile, tablet or desktop.
+      </p>
+    </section>
+    <section>
+      <h2>How to use</h2>
+      <ul class="d-flex flex-column row-gap-3">
+        <li>
+          Each calculation is presented as a question as close as possible to
+          how a human would ask it but with placeholders - form fields. Where
+          one can fill the actual values they want to calculate.
+        </li>
+        <li>
+          Under each calculation the formula used is shown for reference. The
+          form fields themselves support whole numbers like 1, 2, 10, 134 etc.
+          and fractions - 10.3, 2.512. Fractions can also be defined with a
+          comma - 21,123.
+        </li>
+        <li>
+          Upon an invalid value encorntered in the form fields the calculator
+          will return an error and not proceed with the caluclaton.
+        </li>
+
+        <li>
+          There is a reset button for each calculation that allows for quick
+          reset of the form to its initial state.
+        </li>
+        <li>
+          The small info icon at the bottom right allows you to quickly remind
+          yourself with an example if this is the right question for the
+          calculation you want to make.
+        </li>
+      </ul>
+    </section>
+    <section class="d-flex flex-column row-gap-3">
+      <section>
+        <h2>Supported calculations</h2>
+        <p>The calculator supports the three most common questions:</p>
+        <ul class="d-flex flex-column row-gap-1">
+          <li>What is the result of X% of Y?</li>
+          <li>What is the % change from old to new value?</li>
+          <li>What % is X of Y?</li>
+        </ul>
+      </section>
+      <section>
+        <h3>What is the result of X% of Y?</h3>
+        <p>
+          Is useful when you want to find how much or what percentage you will
+          pay or gain. For example how much tax you will pay, or interest on a
+          loan amount, or a discount on a purchase. You can ask questions like:
+        </p>
+        <ul class="d-flex flex-column row-gap-1">
+          <li>
+            What is the amount of tax I will pay when there is a: tax of 20% of
+            my earnings?
+          </li>
+          <li>What is the discount of: 15% of the price for my purchase?</li>
+          <li>What is the amount of: 4% interest of my loan amount?</li>
+        </ul>
+      </section>
+      <section>
+        <h3>What is the % change from old to new?</h3>
+        <p>
+          When you want to find the increase/descrese between two values. For
+          example how much the current price of a product differs from the one 3
+          months ago.
+        </p>
+      </section>
+      <section>
+        <h3>What % is X of Y?</h3>
+        <p>
+          When you want to find out how much of the whole is a number. For
+          example if you want to check your result on a test against the total
+          number of points to see how well you have done.
+        </p>
+      </section>
+    </section>
+    <section>
+      <h2>Get in touch</h3>
+      <p>
+        If you have suggestions for adding new questions or improving the
+        calculator in any way please contact us on our email:
+      </p>
+      <a href="mailto:hello@thepercentagecalculator.app"
+        >info@thepercentagecalculator.app</a
+      >
+    </section>
+  </article>
 </div>

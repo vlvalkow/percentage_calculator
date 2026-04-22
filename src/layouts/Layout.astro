@@ -148,7 +148,7 @@ const year = new Date().getFullYear();
       </nav>
     </header>
 
-    <div class="container py-4">
+    <div class="container py-5">
       <div class="row">
         <div class="col-12 col-lg-9">
           <main>
@@ -157,12 +157,15 @@ const year = new Date().getFullYear();
         </div>
         <div class="col">
           <aside>
-            <GoogleAd id="4868040957" placeholderLayout="vertical" showOnMobile={false}>
+            <GoogleAd
+              id="4868040957"
+              placeholderLayout="vertical"
+              showOnMobile={false}
+            />
           </aside>
         </div>
       </div>
     </div>
-
     <footer class="bg-body-tertiary py-3">
       <div class="container">
         <div class="row">
@@ -183,7 +186,15 @@ const year = new Date().getFullYear();
     </footer>
     <script src="../scripts/color-mode.js"></script>
     <script>
+      import Tooltip from "bootstrap/js/dist/tooltip";
       import "bootstrap/js/dist/dropdown";
+
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]',
+      );
+      [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl),
+      );
     </script>
     <script type="application/ld+json">
       {
