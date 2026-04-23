@@ -10,11 +10,8 @@
       <form id="change_form" class="fs-5" novalidate>
         <div class="d-flex flex-column row-gap-3">
           <div class="d-flex flex-wrap row-gap-2">
-     
-            <div
-              class="d-flex align-items-center flex-grow-1"
-            >
-            <input
+            <div class="d-flex align-items-center flex-grow-1">
+              <input
                 id="change_form_x_value"
                 type="text"
                 inputmode="decimal"
@@ -24,7 +21,10 @@
                 class="form-control form-control-lg"
                 aria-label="Old value"
               />
-              <span class="fs-5 text-end text-sm-center min-w-2 min-w-lg-auto mx-0 mx-md-3">to</span>
+              <span
+                class="fs-5 text-end text-sm-center min-w-2 min-w-lg-auto mx-0 mx-md-3"
+                >to</span
+              >
             </div>
             <div class="d-flex align-items-center flex-grow-1">
               <input
@@ -37,12 +37,17 @@
                 class="form-control form-control-lg"
                 aria-label="New value"
               />
-              <span class="fs-5 text-end min-w-2 min-w-lg-auto ms-0 ms-lg-3">?</span>
+              <span class="fs-5 text-end min-w-2 min-w-lg-auto ms-0 ms-lg-3"
+                >?</span
+              >
             </div>
           </div>
           <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-primary btn-lg">Calculate</button>
-            <button type="reset" class="btn btn-outline-secondary btn-lg">Reset</button
+            <button type="submit" class="btn btn-primary btn-lg"
+              >Calculate</button
+            >
+            <button type="reset" class="btn btn-outline-secondary btn-lg"
+              >Reset</button
             >
           </div>
         </div>
@@ -54,9 +59,31 @@
         >
       </div>
 
-      <p class="text-muted mt-2 mb-0">
-        Formula: <span class="font-monospace">(new − old) / old × 100</span>
-      </p>
+      <div class="d-flex align-items-center justify-content-between">
+        <p class="text-muted mt-2 mb-0">
+          Formula: <span class="font-monospace">(new − old) / old × 100</span>
+        </p>
+        <button
+          type="button"
+          class="btn btn-lg btn-transparent p-0 mb-1"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Example: What is the % discount of this product from the original price 500 to the current 200?"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="bi bi-info-circle-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
